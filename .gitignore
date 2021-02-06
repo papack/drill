@@ -1,0 +1,8 @@
+LaTex/*.aux
+LaTex/*.bbl
+LaTex/*.blg
+LaTex/*.log
+LaTex/*.pdf
+LaTex/*.gz
+LaTex/*.fls
+LaTex/*.fdb_latexmk
