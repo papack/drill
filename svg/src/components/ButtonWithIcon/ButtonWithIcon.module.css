@@ -1,0 +1,21 @@
+.button {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 5px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.button:hover {
+  background-color: darkgray;
+}
+
+.icon {
+}
+
+.text {
+  margin-left: 5px;
+}
