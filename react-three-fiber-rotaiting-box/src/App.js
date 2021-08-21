@@ -1,9 +1,9 @@
 import React, { useRef, useState } from "react";
 import style from "./styles/App.module.css";
-import { useFrame, Canvas } from "@react-three/fiber";
+import { useFrame, Canvas, applyProps } from "@react-three/fiber";
 import { a, useSpring } from "@react-spring/three";
 
-const Box = () => {
+const Box = (props) => {
   const ref = useRef();
 
   const [hovered, setHover] = useState(false);
@@ -20,6 +20,7 @@ const Box = () => {
 
   return (
     <a.mesh
+      {...props}
       ref={ref}
       scale={scale}
       onClick={() => {
@@ -46,6 +47,7 @@ export default function App() {
           <ambientLight />
           <pointLight position={[10, 10, 10]} />
           <Box position={[1.2, 0, 0]} />
+          <Box position={[-1.2, 0, 0]} />
         </Canvas>
       </div>
     </div>
