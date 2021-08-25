@@ -1,21 +1,28 @@
-export const Gauge = ({ speed = 0 }) => {
-  const minValue = 0;
-  const maxValue = 180;
-  const steps = 10;
+import { a, useSpring } from "@react-spring/web";
 
-  const rotation = scale(speed, minValue, maxValue, 60, 310);
+export const Gauge = ({
+  current = 0,
+  minValue = 0,
+  maxValue = 180,
+  steps = 10,
+}) => {
+  const rotation = scale(current, minValue, maxValue, 60, 310);
+
+  const { transform } = useSpring({
+    transform: `rotate(${rotation}deg)`,
+  });
 
   return (
     <div>
       <svg width="500" height="500" viewBox="-200 -200 400 400" fill="none">
-        <rect
+        <a.rect
           x="-5"
           y="-20"
           width="10"
           height="128"
           rx="5"
           fill="#626C76"
-          style={{ transform: `rotate(${rotation}deg)` }}
+          style={{ transform }}
         />
 
         <circle cx="0" cy="0" r="2.5" fill="yellow" stroke="none" />
