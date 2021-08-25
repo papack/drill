@@ -6,7 +6,7 @@ export const Gauge = ({
   maxValue = 180,
   steps = 10,
 }) => {
-  const rotation = scale(current, minValue, maxValue, 60, 310);
+  const rotation = scale(current, minValue, maxValue, 60, 302);
 
   const { transform } = useSpring({
     transform: `rotate(${rotation}deg)`,
@@ -37,7 +37,7 @@ const Beschriftung = ({ minValue, maxValue, steps }) => {
   let result = [];
 
   for (let i = minValue; i <= maxValue; i += steps) {
-    const currentRotation = scale(i, minValue, maxValue, 60, 310);
+    const currentRotation = scale(i, minValue, maxValue, 60, 302);
     const { x, y } = p2c(125, currentRotation);
     result.push(
       <text
