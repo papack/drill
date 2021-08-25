@@ -34,6 +34,7 @@ const Beschriftung = ({ minValue, maxValue, steps }) => {
     const { x, y } = p2c(125, currentRotation);
     result.push(
       <text
+        key={`${x},${y}`}
         x={x}
         y={y}
         fill="darkgray"
